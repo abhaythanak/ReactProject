@@ -1,6 +1,6 @@
 import { HStack, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-
+import ToggleColorMode from "./ToggleColorMode";
 
 export default function Header() {
     return(
@@ -14,6 +14,7 @@ export default function Header() {
         <Button variant={"unstyled"} color={"white"}>
           <Link to="/coins">Coins</Link>
         </Button>
+        <ToggleColorMode />
       </HStack>
     )
 }

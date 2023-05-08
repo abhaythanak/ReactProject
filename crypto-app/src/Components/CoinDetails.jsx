@@ -99,7 +99,7 @@ import {
       fetchCoin();
     }, [params.id, currency, days]);
   
-    if (error) return <ErrorComponent message={"Error While Fetching Coin"} />;
+    if (error) return <ErrorComponent  message={"Error While Fetching Coin"} />;
   
     return (
       <Container maxW={"container.xl"}>
