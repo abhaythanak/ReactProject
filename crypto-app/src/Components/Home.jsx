@@ -21,7 +21,7 @@ export default function Home() {
           w={"full"}
           h={"full"}
           objectFit={"contain"}
-          src="https://png.pngtree.com/png-vector/20210303/ourmid/pngtree-blockchain-golden-bitcoin-png-image_3010113.jpg"
+          src="https://www.freepnglogos.com/uploads/bitcoin-png/bitcoin-multiply-btc-pick-and-profit-5.png" alt="bitcoin, multiply btc pick and profit"
           filter={"grayscale(1)"}
         />
       </motion.div>
@@ -31,7 +31,7 @@ export default function Home() {
         textAlign={"center"}
         fontWeight={"thin"}
         color={"whiteAlpha.700"}
-        mt={"-20"}
+        mt={"-24"}
       >
         Xcrypto
       </Text>
