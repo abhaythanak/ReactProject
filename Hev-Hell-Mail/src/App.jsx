@@ -1,12 +1,15 @@
 
 import './App.css'
+import ChatbotFlowBuilder from './Components/ChatbotFlowBuilder'
+import Main from './Components/Main'
 
 function App() {
  
 
   return (
     <div className="">
-      <h1>App</h1>
+      <Main/>
+      
     </div>
     
   )
