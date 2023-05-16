@@ -1,11 +1,11 @@
-import { Drawer, styled } from "@mui/material"
+import { Drawer } from "@mui/material"
 import SideBarContent from "./SideBarContent"
 
-export default function SideBar() {
+export default function SideBar({openDrawer}) {
     return(
         <Drawer
         anchor="left"
-        open={true}
+        open={openDrawer}
         hideBackdrop={true}
         ModelProps={{
             keepMounted: true
