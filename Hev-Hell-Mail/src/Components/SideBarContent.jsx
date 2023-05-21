@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-key */
+
 import { CreateOutlined } from "@mui/icons-material";
 import {  Button, Container, List, ListItem, styled } from "@mui/material";
 import { SIDEBAR_DATA } from "../config/sidebar.config";
@@ -23,8 +23,8 @@ export default function SideBarContent() {
             
             <List>
                 {
-                    SIDEBAR_DATA.map(data => (
-                        <ListItem>
+                    SIDEBAR_DATA.map((data,i) => (
+                        <ListItem key={i}>
                         <data.icon fontSize="small" />{data.title}
                     </ListItem>
                     )
