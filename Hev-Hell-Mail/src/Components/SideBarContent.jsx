@@ -2,6 +2,7 @@
 import { CreateOutlined } from "@mui/icons-material";
 import {  Button, Container, List, ListItem, styled } from "@mui/material";
 import { SIDEBAR_DATA } from "../config/sidebar.config";
+import ComposeMail from "./ComposeMail";
 
 const ComposeButton = styled(Button)({
     background: '#c2e7ff',
@@ -19,7 +20,9 @@ export default function SideBarContent() {
     return(
         <Container>
            
-                <ComposeButton><CreateOutlined/> Compose</ComposeButton>
+                <ComposeButton>
+                    <CreateOutlined/> Compose
+                </ComposeButton>
             
             <List>
                 {
@@ -33,6 +36,7 @@ export default function SideBarContent() {
                     
                 }
             </List>
+            <ComposeMail/>
         </Container>
 
     )
