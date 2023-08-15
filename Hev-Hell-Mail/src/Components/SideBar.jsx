@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Drawer } from "@mui/material"
 import SideBarContent from "./SideBarContent"
 

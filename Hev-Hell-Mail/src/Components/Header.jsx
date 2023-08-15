@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { AppBar, Toolbar, styled, InputBase, Box} from '@mui/material'
 import { Menu as MenuIcon, Search, Tune, HelpOutlineOutlined, SettingsOutlined, AppsOutlined, AccountCircleOutlined } from '@mui/icons-material'
 import { GmailLogo } from '../constant/constant'
