@@ -1,7 +1,8 @@
 # FlixMingle
 - Create React App
 - Configured TailwindCSS
-
+- Header
+- Login Form
 
 # Feature
 - Login/Sign Up

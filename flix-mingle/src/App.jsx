@@ -1,9 +1,10 @@
 import './App.css';
+import Body from './components/Body/Body';
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-5xl">netflix</h1>
+      <Body/>
     </div>
   );
 }
