@@ -1,19 +1,28 @@
 import { useRef, useState } from "react";
 import Header from "../Header/Header";
 import { checkValidData } from "../../utils/validate";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../utils/Firebase";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../../utils/userSlice";
 
 export default function Login(params) {
     const [isSignInForm, setIsSignInForm] = useState(true);
-    const [errorMessage, setErrorMessage] = useState(null)
+    const [errorMessage, setErrorMessage] = useState(null);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const name = useRef(null);
     const email = useRef(null);
     const password = useRef(null);
 
     const handleButtonClick = ()=>{
-       const message = checkValidData(email.current.value,password.current.value,isSignInForm ? null : name.current.value)
+       const message = checkValidData(
+        email.current.value,
+        password.current.value,
+        isSignInForm ? null : name.current.value
+        );
        setErrorMessage(message)
        if(message) return;
 
@@ -27,7 +36,26 @@ export default function Login(params) {
          .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
+          updateProfile(user, {
+            displayName: name.current.value, photoURL: "https://occ-0-6247-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABdpkabKqQAxyWzo6QW_ZnPz1IZLqlmNfK-t4L1VIeV1DY00JhLo_LMVFp936keDxj-V5UELAVJrU--iUUY2MaDxQSSO-0qw.png?r=e6e"
+          }).then(() => {
+            // Profile updated!
+            const {uid, email, displayName, photoURL} = auth.currentUser;
+              dispatch(
+                addUser({
+                    uid: uid,
+                    email: email,
+                    displayName: displayName,
+                    photoURL: photoURL
+                })
+             );
+             navigate("/browse")
+          }).catch((error) => {
+            // An error occurred
+            setErrorMessage(error.message)
+          });
           console.log(user)
+          navigate("/browse")
      // ...
       })
          .catch((error) => {
@@ -46,6 +74,8 @@ export default function Login(params) {
          .then((userCredential) => {
          // Signed in 
           const user = userCredential.user;
+          console.log(user)
+          navigate("/browse")
           // ...
          })
           .catch((error) => {

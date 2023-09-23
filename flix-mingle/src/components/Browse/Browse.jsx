@@ -1,5 +1,9 @@
+import Header from "../Header/Header";
+
 export default function Browse(params) {
     return(
-        <div className=""></div>
+        <div className="">
+            <Header/>
+        </div>
     )
 };
