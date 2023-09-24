@@ -3,14 +3,12 @@ import Header from "../Header/Header";
 import { checkValidData } from "../../utils/validate";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../utils/Firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../../utils/userSlice";
 
 export default function Login(params) {
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const name = useRef(null);
@@ -49,13 +47,10 @@ export default function Login(params) {
                     photoURL: photoURL
                 })
              );
-             navigate("/browse")
           }).catch((error) => {
             // An error occurred
             setErrorMessage(error.message)
           });
-          console.log(user)
-          navigate("/browse")
      // ...
       })
          .catch((error) => {
@@ -74,9 +69,7 @@ export default function Login(params) {
          .then((userCredential) => {
          // Signed in 
           const user = userCredential.user;
-          console.log(user)
-          navigate("/browse")
-          // ...
+
          })
           .catch((error) => {
            const errorCode = error.code;
