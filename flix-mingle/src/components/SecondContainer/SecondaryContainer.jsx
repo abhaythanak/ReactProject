@@ -1,7 +1,7 @@
 export default function SecondaryContainer() {
     return(
         <div className="">
-            secondContainer
+            secondContaine
         </div>
     )
 };

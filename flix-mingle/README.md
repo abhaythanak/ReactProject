@@ -21,7 +21,7 @@
 - Register TMDB API & create an app & get access token
 - Get data from TMDB now playing movies list API
 - Custom Hooks for now playing movies  
-- Create MovieSlice
+- Custom Hooks for now playing movies 
 - Update Store with movies Data
 - Planning for mainContainer & secondary container
 - Fetch Data for Trailer Video
