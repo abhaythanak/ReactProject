@@ -6,7 +6,7 @@ import GptSearchBar from "./GptSearchBar";
 export default function GptSearch() {
     return(
         <div className="">
-            <div className="absolute -z-10">
+            <div className="fixed -z-10">
                <img src={BG_URL} alt="BG_URL" />
             </div> 
             <GptSearchBar/>
