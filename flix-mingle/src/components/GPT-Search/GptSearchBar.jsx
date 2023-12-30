@@ -18,7 +18,7 @@ export default function GptSearchBar() {
         movie +'&include_adult=false&language=en-US&page=1', 
         API_OPTIONS
         );
-        const json = await data.json()
+        const json = await data?.json()
 
         return json.results;
     }
@@ -50,10 +50,10 @@ export default function GptSearchBar() {
 
     return(
         <div className="">
-            <div className="pt-[10%] flex justify-center">
+            <div className="pt-[35%] md:pt-[10%] flex justify-center">
                 <form 
                 onSubmit={(e) => e.preventDefault()}
-                className=" w-1/2 bg-black grid grid-cols-12">
+                className="w-full md:w-1/2 bg-black grid grid-cols-12">
                     <input 
                     ref={searchText}
                     type="text"

@@ -17,9 +17,11 @@ export default function Browse(params) {
             {
                 showGptSearch ? ( <GptSearch/> ) : (
                 <>
+                
                 <MainContainer/>
                 <SecondaryContainer/>
                 </>
+                
                 )
             }
             

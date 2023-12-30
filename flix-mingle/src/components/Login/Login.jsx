@@ -85,13 +85,13 @@ export default function Login(params) {
         setIsSignInForm(!isSignInForm)
     }
     return(
-        <div className="">
+        <div className="relative">
             <Header/>
-            <div className="absolute">
-               <img src={BG_URL} alt="BG_URL" />
+            <div className="absolute h-screen">
+               <img className=" object-cover w-full h-full sm:h-auto " src={BG_URL} alt="BG_URL" />
             </div>  
             <form onSubmit={(e) => e.preventDefault()}
-        className="w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
+        className="w-full md:w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
       >
         <h1 className="font-bold text-3xl py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
